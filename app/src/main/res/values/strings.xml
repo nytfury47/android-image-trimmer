@@ -2,4 +2,9 @@
     <string name="app_name">Image Trimmer 42</string>
     <string name="toast_a_backToExit">Press Back again to exit.</string>
     <string name="image_description">Image Description</string>
+
+    <!-- ActivityMain -->
+    <string name="txt_title_main">Select Image</string>
+    <string name="txt_no_image">No Image</string>
+    <string name="txt_template_header">Template</string>
 </resources>
