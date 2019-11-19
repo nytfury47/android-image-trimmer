@@ -45,7 +45,7 @@
         app:layout_constraintGuide_percent="0.7" />
 
     <TextView
-        android:id="@+id/txt_title_e2"
+        android:id="@+id/txt_title_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -77,7 +77,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_img_header" />
 
     <TextView
-        android:id="@+id/txt_no_image_e2"
+        android:id="@+id/txt_no_image_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"

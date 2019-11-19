@@ -1,0 +1,146 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMainBG"
+    tools:context=".ActivityTrimView">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.024647887323944" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_close_x_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_close_x_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.965625" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_image_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.077464788732394" />
+
+    <ImageView
+        android:id="@+id/img_close_trim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/ic_close"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/guideline_close_x_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top_y"
+        app:layout_constraintWidth_percent="0.05" />
+
+    <Button
+        android:id="@+id/btn_close_trim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close_trim"
+        app:layout_constraintEnd_toEndOf="@+id/img_close_trim"
+        app:layout_constraintHeight_percent="0.084507042253521"
+        app:layout_constraintStart_toStartOf="@+id/img_close_trim"
+        app:layout_constraintTop_toTopOf="@+id/img_close_trim"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/txt_title_trim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:text="@string/txt_title_trim"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close_trim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_close_trim"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <TextView
+        android:id="@+id/txt_save_trim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:text="@string/txt_save"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close_trim"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_close_x_end"
+        app:layout_constraintTop_toTopOf="@+id/img_close_trim" />
+
+    <Button
+        android:id="@+id/btn_save_trim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_save_trim"
+        app:layout_constraintEnd_toEndOf="@+id/txt_save_trim"
+        app:layout_constraintHeight_percent="0.084507042253521"
+        app:layout_constraintStart_toStartOf="@+id/txt_save_trim"
+        app:layout_constraintTop_toTopOf="@+id/txt_save_trim"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <com.tan.myimagetrimmer.ImageScrollView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/image_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_image_y" />
+
+    <View
+        android:id="@+id/view_crop_area_top_cover"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        app:layout_constraintBottom_toTopOf="@+id/view_crop_area"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <View
+        android:id="@+id/view_crop_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <View
+        android:id="@+id/view_crop_area_bottom_cover"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/view_crop_area" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
