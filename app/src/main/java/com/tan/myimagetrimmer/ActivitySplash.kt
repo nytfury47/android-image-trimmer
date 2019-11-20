@@ -10,6 +10,7 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.widget.TextView
 import com.tan.myimagetrimmer.data.DataModel
+import com.tan.myimagetrimmer.service.OnClearFromRecentService
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class ActivitySplash : AppCompatActivity() {
@@ -17,7 +18,9 @@ class ActivitySplash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
         DataModel.init(this)
+        startService(Intent(this, OnClearFromRecentService::class.java))
     }
 
     override fun onStart() {
