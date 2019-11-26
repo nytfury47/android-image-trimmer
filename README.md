@@ -1,5 +1,5 @@
 # android-image-trimmer
-Set and trim square-and-rectangle-sized images
+Set and trim square-and-rectangle-sized images in Android
 
 Using Android Studio 3.5.2, Target SDK = 29 (Min = 21)
 
